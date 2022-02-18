@@ -2,7 +2,10 @@
 import React from "react";
 
 const src: React.FC = () => {
-  return <h1>Hello World</h1>;
+  // -------------------------------------------------
+  // Render
+  // -------------------------------------------------
+  return <h1 className="test">Hello World</h1>;
 };
 
 export default src;
