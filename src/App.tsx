@@ -1,11 +1,29 @@
 // Packages
-import React from "react";
+import React, { useState } from "react";
 
 const src: React.FC = () => {
   // -------------------------------------------------
+  // States
+  // -------------------------------------------------
+
+  const [list, setList] = useState(["Luiz", "Henrique", "de"]);
+
+  // -------------------------------------------------
+  // Functions
+  // -------------------------------------------------
+
+  const handleAddNameToList = () => {
+    setList((state) => [...state, "Jesus"]);
+  };
+
+  // -------------------------------------------------
   // Render
   // -------------------------------------------------
-  return <h1 className="test">Hello World</h1>;
+  return (
+    <>
+      <button onClick={handleAddNameToList}>Adicionar</button>
+    </>
+  );
 };
 
 export default src;
