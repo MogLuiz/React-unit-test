@@ -22,15 +22,13 @@ describe("App Component", () => {
   });
 
   it("should be able to add new item to the list", () => {
-    const { getByText, debug } = render(<App />);
+    const { getByText, getByPlaceholderText } = render(<App />);
 
     const addButton = getByText("Adicionar");
+    const inputelement = getByPlaceholderText("Novo Item");
 
-    debug();
-
+    userEvent.type(inputelement, "Jesus");
     userEvent.click(addButton);
-
-    debug();
 
     expect(getByText("Jesus")).toBeInTheDocument();
   });

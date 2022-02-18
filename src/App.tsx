@@ -21,7 +21,11 @@ const src: React.FC = () => {
   // -------------------------------------------------
   return (
     <>
-      <input type="text" onChange={(e) => setNewItem(e.target.value)} />
+      <input
+        placeholder="Novo Item"
+        type="text"
+        onChange={(e) => setNewItem(e.target.value)}
+      />
       <button onClick={handleAddNameToList}>Adicionar</button>
       <ul>
         {list.map((item) => (
