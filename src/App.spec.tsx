@@ -1,5 +1,6 @@
 // Packages
 import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
 // Components
 import App from "./App";
@@ -18,5 +19,15 @@ describe("App Component", () => {
     expect(getByText("Luiz")).toBeInTheDocument();
     expect(getByText("Henrique")).toBeInTheDocument();
     expect(getByText("de")).toBeInTheDocument();
+  });
+
+  it("should be able to add new item to the list", () => {
+    const { getByText } = render(<App />);
+
+    const addButton = getByText("Adicionar");
+
+    userEvent.click(addButton);
+
+    expect(getByText("Jesus")).toBeInTheDocument();
   });
 });
