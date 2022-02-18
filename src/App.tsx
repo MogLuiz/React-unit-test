@@ -22,6 +22,11 @@ const src: React.FC = () => {
   return (
     <>
       <button onClick={handleAddNameToList}>Adicionar</button>
+      <ul>
+        {list.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
     </>
   );
 };

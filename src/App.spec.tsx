@@ -7,6 +7,16 @@ import App from "./App";
 test("sum", () => {
   const { getByText } = render(<App />);
 
-  expect(getByText("Hello World")).toBeInTheDocument();
-  expect(getByText("Hello World")).toHaveAttribute("class", "test");
+  expect(getByText("Luiz")).toBeInTheDocument();
+  // expect(getByText("Henrique")).toHaveAttribute("class", "test");
+});
+
+describe("App Component", () => {
+  it("should render list items", () => {
+    const { getByText } = render(<App />);
+
+    expect(getByText("Luiz")).toBeInTheDocument();
+    expect(getByText("Henrique")).toBeInTheDocument();
+    expect(getByText("de")).toBeInTheDocument();
+  });
 });
