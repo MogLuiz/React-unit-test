@@ -5,7 +5,7 @@ const src: React.FC = () => {
   // -------------------------------------------------
   // States
   // -------------------------------------------------
-
+  const [newItem, setNewItem] = useState("");
   const [list, setList] = useState(["Luiz", "Henrique", "de"]);
 
   // -------------------------------------------------
@@ -13,7 +13,7 @@ const src: React.FC = () => {
   // -------------------------------------------------
 
   const handleAddNameToList = () => {
-    setList((state) => [...state, "Jesus"]);
+    setList((state) => [...state, newItem]);
   };
 
   // -------------------------------------------------
@@ -21,6 +21,7 @@ const src: React.FC = () => {
   // -------------------------------------------------
   return (
     <>
+      <input type="text" onChange={(e) => setNewItem(e.target.value)} />
       <button onClick={handleAddNameToList}>Adicionar</button>
       <ul>
         {list.map((item) => (
