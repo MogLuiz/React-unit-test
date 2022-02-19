@@ -21,15 +21,15 @@ describe("App Component", () => {
     expect(getByText("de")).toBeInTheDocument();
   });
 
-  it("should be able to add new item to the list", () => {
-    const { getByText, getByPlaceholderText } = render(<App />);
+  it("should be able to add new item to the list", async () => {
+    const { getByText, getByPlaceholderText, findByText } = render(<App />);
 
     const addButton = getByText("Adicionar");
-    const inputelement = getByPlaceholderText("Novo Item");
+    const inputElement = getByPlaceholderText("Novo Item");
 
-    userEvent.type(inputelement, "Jesus");
+    userEvent.type(inputElement, "Jesus"); // Adicionando value no input
     userEvent.click(addButton);
 
-    expect(getByText("Jesus")).toBeInTheDocument();
+    expect(await findByText("Jesus")).toBeInTheDocument();
   });
 });

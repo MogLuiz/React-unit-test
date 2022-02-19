@@ -13,7 +13,7 @@ const src: React.FC = () => {
   // -------------------------------------------------
 
   const handleAddNameToList = () => {
-    setList((state) => [...state, newItem]);
+    setTimeout(() => setList((state) => [...state, newItem]), 500);
   };
 
   // -------------------------------------------------
