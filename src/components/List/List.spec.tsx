@@ -7,18 +7,21 @@ import {
 import userEvent from "@testing-library/user-event";
 
 // Components
-import App from "./App";
+import List from "./index";
+
+// Data
+import { initialItems } from "../../shared/index";
 
 test("sum", () => {
-  const { getByText } = render(<App />);
+  const { getByText } = render(<List initialItems={initialItems} />);
 
   expect(getByText("Luiz")).toBeInTheDocument();
   // expect(getByText("Henrique")).toHaveAttribute("class", "test");
 });
 
-describe("App Component", () => {
+describe("List Component", () => {
   it("should render list items", () => {
-    const { getByText } = render(<App />);
+    const { getByText } = render(<List initialItems={initialItems} />);
 
     expect(getByText("Luiz")).toBeInTheDocument();
     expect(getByText("Henrique")).toBeInTheDocument();
@@ -26,7 +29,9 @@ describe("App Component", () => {
   });
 
   it("should be able to add new item to the list", async () => {
-    const { getByText, getByPlaceholderText, findByText } = render(<App />);
+    const { getByText, getByPlaceholderText, findByText } = render(
+      <List initialItems={initialItems} />
+    );
 
     const addButton = getByText("Adicionar");
     const inputElement = getByPlaceholderText("Novo Item");
@@ -38,7 +43,9 @@ describe("App Component", () => {
   });
 
   it("should be able to remove item from the list", async () => {
-    const { getByText, getAllByText, queryByText } = render(<App />);
+    const { getByText, getAllByText, queryByText } = render(
+      <List initialItems={initialItems} />
+    );
 
     const removeButtons = getAllByText("Remover");
 
