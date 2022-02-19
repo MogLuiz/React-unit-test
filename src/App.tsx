@@ -1,48 +1,14 @@
 // Packages
-import React, { useState } from "react";
+import React from "react";
 
-const src: React.FC = () => {
-  // -------------------------------------------------
-  // States
-  // -------------------------------------------------
-  const [newItem, setNewItem] = useState("");
-  const [list, setList] = useState(["Luiz", "Henrique", "de"]);
+// Components
+import { List } from "./components";
 
-  // -------------------------------------------------
-  // Functions
-  // -------------------------------------------------
-
-  const handleAddNameToList = () => {
-    setTimeout(() => setList((state) => [...state, newItem]), 500);
-  };
-
-  const handleRemoveFromList = (item: string) => {
-    setTimeout(() => {
-      setList((state) => state.filter((currentItem) => currentItem !== item));
-    }, 500);
-  };
-
+const App: React.FC = () => {
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
-  return (
-    <>
-      <input
-        placeholder="Novo Item"
-        type="text"
-        onChange={(e) => setNewItem(e.target.value)}
-      />
-      <button onClick={handleAddNameToList}>Adicionar</button>
-      <ul>
-        {list.map((item) => (
-          <li key={item}>
-            {item}
-            <button onClick={() => handleRemoveFromList(item)}>Remover</button>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <List initialItems={["Luiz", "Henrique", "de"]} />;
 };
 
-export default src;
+export default App;
