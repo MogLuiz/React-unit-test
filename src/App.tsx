@@ -16,6 +16,12 @@ const src: React.FC = () => {
     setTimeout(() => setList((state) => [...state, newItem]), 500);
   };
 
+  const handleRemoveFromList = (item: string) => {
+    setTimeout(() => {
+      setList((state) => state.filter((currentItem) => currentItem !== item));
+    }, 500);
+  };
+
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
@@ -29,7 +35,10 @@ const src: React.FC = () => {
       <button onClick={handleAddNameToList}>Adicionar</button>
       <ul>
         {list.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item}>
+            {item}
+            <button onClick={() => handleRemoveFromList(item)}>Remover</button>
+          </li>
         ))}
       </ul>
     </>
