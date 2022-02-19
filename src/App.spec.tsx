@@ -1,5 +1,9 @@
 // Packages
-import { render, waitForElementToBeRemoved } from "@testing-library/react";
+import {
+  render,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 // Components
@@ -34,7 +38,7 @@ describe("App Component", () => {
   });
 
   it("should be able to remove item from the list", async () => {
-    const { getByText, getAllByText } = render(<App />);
+    const { getByText, getAllByText, queryByText } = render(<App />);
 
     const removeButtons = getAllByText("Remover");
 
@@ -42,6 +46,9 @@ describe("App Component", () => {
 
     await waitForElementToBeRemoved(() => {
       return getByText("Luiz");
+    });
+    await waitFor(() => {
+      expect(queryByText("Luiz")).not.toBeInTheDocument();
     });
   });
 });
