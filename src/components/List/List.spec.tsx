@@ -21,16 +21,24 @@ test("sum", () => {
 
 describe("List Component", () => {
   it("should render list items", () => {
-    const { getByText } = render(<List initialItems={initialItems} />);
+    const { getByText, rerender, queryByText, unmount } = render(
+      <List initialItems={initialItems} />
+    );
 
     expect(getByText("Luiz")).toBeInTheDocument();
     expect(getByText("Henrique")).toBeInTheDocument();
     expect(getByText("de")).toBeInTheDocument();
+
+    unmount()
+    rerender(<List initialItems={["Léo"]} />);
+
+    expect(getByText("Léo")).toBeInTheDocument();
+    expect(queryByText("Luiz")).not.toBeInTheDocument();
   });
 
   it("should be able to add new item to the list", async () => {
     const { getByText, getByPlaceholderText, findByText } = render(
-      <List initialItems={initialItems} />
+      <List initialItems={[]} />
     );
 
     const addButton = getByText("Adicionar");
@@ -44,7 +52,7 @@ describe("List Component", () => {
 
   it("should be able to remove item from the list", async () => {
     const { getByText, getAllByText, queryByText } = render(
-      <List initialItems={initialItems} />
+      <List initialItems={["Luiz"]} />
     );
 
     const removeButtons = getAllByText("Remover");
