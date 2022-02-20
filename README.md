@@ -22,3 +22,14 @@ Testes Unitários em ReactJS
 <p>
    Esse é um pequeno projeto para colocar em prática estudos em testes unitários com ReactJS utilizando Jest e React Testing Library.
 </p>
+
+
+## :books: Tópicos
+
+-   [x] [Jest](https://jestjs.io/pt-BR/)
+-   [x] [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+-   [x] [Rerender](https://testing-library.com/docs/react-testing-library/api#rerender)
+-   [x] [Debug](https://testing-library.com/docs/react-testing-library/api#debug)
+-   [x] [User-Event](https://testing-library.com/docs/ecosystem-user-event/)
+
+
