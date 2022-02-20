@@ -33,3 +33,20 @@ Testes Unitários em ReactJS
 -   [x] [User-Event](https://testing-library.com/docs/ecosystem-user-event/)
 
 
+## :rocket: Executando o Projeto
+
+Para clonar e executar este aplicativo, você precisará do [Git], [Node.js v14.15.0] ou superior + [Yarn v1.22] ou superior instalado em seu computador. Da sua linha de comando:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/MogLuiz/React-unit-test.git
+
+# Go into the repository
+$ cd React-unit-test
+
+# Install dependencies
+$ yarn install
+
+# Run the app
+$ yarn start
+```
