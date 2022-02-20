@@ -7,3 +7,18 @@
 <h4 align="center">
 Testes Unitários em ReactJS
 </h4>
+
+
+<p align="center">
+   <a href="#dart-objetivo">Objetivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-tópicos">Tópicos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-executando-o-projeto">Executando o Projeto</a>
+</p>
+
+
+
+## :dart: Objetivo
+
+<p>
+   Esse é um pequeno projeto para colocar em prática estudos em testes unitários com ReactJS utilizando Jest e React Testing Library.
+</p>
